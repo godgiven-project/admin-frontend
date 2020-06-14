@@ -1,5 +1,16 @@
 export default {
 	AppName: "پنل مدیریت گادگیون",
+	education:{
+		'No formal education':"بدون آموزش رسمی",
+		'Primary education':"آموزش ابتدایی",
+		'Secondary education or high school':"آموزش متوسطه یا دبیرستان",
+		'GED or Vocational qualification':"دیپلم",
+		'Associate’s Degree': "",
+		'Bachelor’s degree':"کارشناسی",
+		'Master’s degree':"کارشناسی ارشد",
+		'Doctorate':"دکترا",
+		'Doctorate and Higher':"دکترا و بالاتر"
+	},
 	auth:{
 		username: 'نام کاربری',
 		password: 'رمز عبور',
@@ -45,4 +56,38 @@ export default {
         Blocks: "مسدود شده ها",
         Disables: "غیر فعال ها"
     },
+    MUIDataTable:{
+		body: {
+			noMatch: "متاسفانه موردی پیدا نشد",
+			toolTip: "مرتب کردن",
+			columnHeaderTooltip: column => `مرتب کردن با ${column.label}`
+		},
+		pagination: {
+			next: "صفحه بعدی",
+			previous: "صفحه قبلی",
+			rowsPerPage: "تعداد رکورد ها در هر صفحه:",
+			displayRows: "از",
+		},
+		toolbar: {
+			search: "جستجو",
+			downloadCsv: "دانلود اکسل",
+			print: "پرینت",
+			viewColumns: "مشاهده ستون ها",
+			filterTable: "فیلتر کردن",
+		},
+		filter: {
+			all: "همه",
+			title: "فیلتر شده",
+			reset: "ریست",
+		},
+		viewColumns: {
+			title: "مشاهده ستون ها",
+			titleAria: "نمایش و پنهان کردن ستون ها",
+		},
+		selectedRows: {
+			text: "ستون های انتخاب شده",
+			delete: "پاک کردن",
+			deleteAria: "پاک کردن ستون های انتخاب شده",
+		},
+	}
 };

@@ -12,9 +12,9 @@ function App() {
 		<HashRouter>
 			<div className={ "App " + process.env.REACT_APP_Dir}>
 	    		<Route exact path="/" component={login} />
-				<Route exact path="/login" component={login} />
-				<Route exact path="/register" component={register} />
-				<PrivateRoute exact path='/panel' component={MainContainer} />
+				<Route path="/login" component={login} />
+				<Route path="/register" component={register} />
+				<PrivateRoute path='/panel' component={MainContainer} />
 			</div>
 		</HashRouter>
 	);

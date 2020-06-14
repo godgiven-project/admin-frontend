@@ -141,6 +141,30 @@ html{scroll-behavior: smooth;}
 .rtl .MuiListItem-root{
 	text-align: right !important;
 }
+.rtl .MuiTable-root > caption{
+	right: -3000px;
+	left: auto;
+}
+.rtl .MuiToolbar-root[aria-label="Table Toolbar"] div:nth-child(1) .MuiInputBase-input{
+	height: 26px;
+}
+.rtl .MuiToolbar-root[aria-label="Table Toolbar"] div:nth-child(2){
+	text-align: left;
+}
+/*** MUIDataTable ***/
+.rtl .MuiTablePagination-actions{
+	direction: ltr;
+	flex: 1 1 100%;
+	margin-left: 0;
+	margin-right: 20px;
+}
+.rtl .MuiTablePagination-spacer{
+	flex: none;
+}
+.rtl .MuiTableCell-footer .MuiToolbar-root{
+	padding-left: 2px;
+	padding-right: 20px;
+}
 .MuiChip-root{
 	margin: 2px !important;
 }
@@ -155,6 +179,10 @@ html{scroll-behavior: smooth;}
 	text-align: right;
 	padding-right: .375rem;
 	padding-left: 3rem;
+}
+.rtl table td:not([align]), 
+.rtl table th:not([align]){
+	text-align: right;
 }
 /***********************************************************/
 /**/

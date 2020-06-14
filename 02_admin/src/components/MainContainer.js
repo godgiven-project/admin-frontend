@@ -1,6 +1,6 @@
 import React , { Component }  from 'react';
 import Routs from '../Deap_routs';
-import { Link } from 'react-router-dom';
+import {HashRouter, Route, Link } from "react-router-dom";
 import { makeStyles, fade, createMuiTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -30,6 +30,10 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Icons from "../assets/images/icons/Icons";
 import ggn_lang from '../i18n/ggn_lang';
+/*********************************************************/
+/*********************************************************/
+import Home from './index/Home';
+import Users from './users/Users';
 //import clsx from 'clsx';
 //import UserTool from './header/UserTool';
 
@@ -250,7 +254,7 @@ class MainContainer extends React.Component {
 								{'icon':<DashboardIcon style={classes.drawer_list_item_icon} />, 'text':ggn_lang.panel.Dashboard ,'link':'/panel'}, 
 								
 							].map((text, index) => (
-								<ListItem button key={"main_side_toolbar_one"+index} component={Link} to={text.link} onClick={(event)=>this.toggleDrawer()}>
+								<ListItem button key={"main_side_toolbar_one"+index} component={Link} to={text.link}>
 									<ListItemIcon style={classes.drawer_list_item_icon}>
 										{text.icon}
 									</ListItemIcon>
@@ -273,7 +277,7 @@ class MainContainer extends React.Component {
 						</List>
 						<Collapse in={this.return_menu_list_state('user_management')} timeout="auto" unmountOnExit>
 							<List component="div" disablePadding>
-								<ListItem button className={classes.nested}>
+								<ListItem button className={classes.nested} component={Link} to={"/panel/users"}>
 									<ListItemIcon>
 										<PeopleIcon style={classes.drawer_list_item_icon} />
 									</ListItemIcon>
@@ -294,7 +298,10 @@ class MainContainer extends React.Component {
 					</div>
 				</Drawer>
 				<main className="godgiven_main_page_container">
-					<Routs />
+					<HashRouter>
+						<Route exact path="/panel" component={Home} />
+						<Route path="/panel/users" component={Users} />
+					</HashRouter>
 				</main>
 				{/*<StickyFooter />*/}
 			</div>
